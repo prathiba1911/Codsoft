@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .calculator {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 320px; 
+        }
+
+        .display {
+            font-size: 2em;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #111;
+            color: #fff;
+            border-radius: 5px;
+            text-align: right;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            background: #555;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:active {
+            background: #777;
+        }
+
+        .operator {
+            background: #28a745;
+        }
+
+        .operator:active {
+            background: #218838;
+        }
+
+        .equals {
+            grid-column: span 3;
+            background: #ff5c05; 
+        }
+
+        .equals:active {
+            background: #e64a00; 
+        }
+
+        .del {
+            background: #6288e1;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        .del:active {
+            background:  #1fc8c8;
+        }
+
+        .ac {
+            background: #dc3545;
+            font-size: 0.8em; 
+        }
+
+        .ac:active {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn ac" data-value="C">AC</button>
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn operator" data-value="*">×</button>
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn operator" data-value="-">-</button>
+            <button class="btn" data-value="0">0</button>
+            <button class="btn" data-value=".">.</button>
+            <button class="btn del" data-value="DEL">DEL</button>
+            <button class="btn operator" data-value="+">+</button>
+            <button class="btn equals" data-value="=">=</button>
+            <button class="btn operator" data-value="/">÷</button>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('.btn');
+        let currentInput = '';
+        let operator = '';
+        let previousInput = '';
+        let operationDisplay = '';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.getAttribute('data-value');
+
+                if (value === 'C') {
+                    currentInput = '';
+                    operator = '';
+                    previousInput = '';
+                    operationDisplay = '';
+                    display.textContent = '0';
+                    return;
+                }
+
+                if (value === 'DEL') {
+                    currentInput = currentInput.slice(0, -1);
+                    operationDisplay = `${previousInput} ${operator} ${currentInput}`.trim();
+                    display.textContent = operationDisplay || '0';
+                    return;
+                }
+
+                if (value === '=' && currentInput) {
+                    currentInput = calculate(previousInput, operator, currentInput);
+                    display.textContent = currentInput;
+                    operator = '';
+                    previousInput = currentInput; 
+                    currentInput = '';
+                    return;
+                }
+
+                if (button.classList.contains('operator')) {
+                    if (currentInput) {
+                        if (previousInput && operator) {
+                            currentInput = calculate(previousInput, operator, currentInput);
+                        }
+                        operator = value;
+                        previousInput = currentInput;
+                        currentInput = '';
+                        operationDisplay = `${previousInput} ${operator}`;
+                        display.textContent = operationDisplay;
+                    } else if (previousInput) {
+                        operator = value;
+                        operationDisplay = `${previousInput} ${operator}`;
+                        display.textContent = operationDisplay;
+                    }
+                    return;
+                }
+
+                if (currentInput.length < 10) {
+                    if (value === '.' && currentInput.includes('.')) return;
+                    currentInput += value;
+                    operationDisplay = `${previousInput} ${operator} ${currentInput}`.trim();
+                    display.textContent = operationDisplay;
+                }
+            });
+        });
+
+        function calculate(a, op, b) {
+            a = parseFloat(a);
+            b = parseFloat(b);
+            switch (op) {
+                case '+':
+                    return (a + b).toString();
+                case '-':
+                    return (a - b).toString();
+                case '*':
+                    return (a * b).toString();
+                case '/':
+                    return (a / b).toString();
+                default:
+                    return b;
+            }
+        }
+    });
+    </script>
+
+</body>
+</html>
