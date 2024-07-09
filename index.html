@@ -1,223 +1,322 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burgerbees Landing Page</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="css/style.css">
-
-
-    <title>Portfolio</title>
+    
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    
+    <link rel="stylesheet" href="./assets/css/app.css">
 </head>
+<body>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg py-3 sticky-top navbar-light bg-white">
+    <!-- Navbar -->
+    <div class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <h3>Prathiba D</h3>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#project">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#resume">Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-        </div>
-    </nav><!-- //NAVBAR -->
-
-    <!-- HERO -->
-<div class="hero vh-100 d-flex align-items-center" id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 mx-auto text-left">
-                <p class="text-white my-3">Hi,</p>
-                <h1 class="display-4 text-white">I'm Prathiba D</h1>
-                <p class="text-white my-3">An MCA Student at SRM University</p>
+            <a href="#" class="brand">BurgerBees.</a>
+            <ul class="nav-links">
+                <li class="active"><a href="#hero">Home</a></li>
+                <li><a href="#services">About us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#ct">Testimonials</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
             </div>
         </div>
     </div>
-</div><!-- //HERO -->
+    <!--//Navbar -->
+    
+    <!-- Hero -->
+    <div id="hero">
+        <div class="container">
+            <h1 class="heading-xl"><span id="hero-titles"></span></h1>
+            <a href="#services" class="scroll-to-down"><i class="las la-arrow-down"></i></a>
+        </div>
+    </div>
+    <!-- //Hero -->
 
-
-  
-
-    <!-- about -->
-    <section class="row w-100 py-0 bg-light" id="about">
-        <div class="col-lg-6 col-img"></div>
-        <div class="col-lg-6 py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 offset-md-1">
-                        <h6 class="text-primary">About myself</h6>
-                        <h1>Passionate Software and Web Developer</h1>
-                        <p>I completed my BCA degree at Madras Christian College, East Tambaram and I am currently pursuing my post graduation in MCA at SRM University.As an MCA student,I am passionate about software and web development, specializing in Python and frontend technologies. I excel in creating seamless user experiences and scalable solutions, committed to pushing boundaries and delivering excellence in every project I undertake. Alongside technical skills, I possess strong communication skills, foster innovation, and embrace critical thinking.</p>
-
-                       
-
-                    </div>
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="section-intro" data-aos="fade-up">
+                <h1 class="heading-2">About Us</h1>
+            </div>
+            <div class="grid three-col-grid">
+                <div class="service" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon"><i class="las la-book"></i></div>
+                    <h3 class="heading-3">Our Story</h3>
+                    <p>BurgerBees was founded in 2024 by PrathiBee, a passionate food enthusiast with a vision of reinventing the burger experience.Bee grew up savoring the delicious flavors of homemade burgers, and that nostalgia inspired the creation of BurgerBees.</p>
+                </div>
+                <div class="service" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon"><i class="las la-feather"></i></div>
+                    <h3 class="heading-3">Our Philosophy</h3>
+                    <p>We believe that a great burger should not only tantalize your taste buds but also tell a story. That's why we source the finest ingredients, from locally grown produce to premium plant-based alternatives, to ensure that each burger is a masterpiece in itself.</p>
+                </div>
+                <div class="service" data-aos="fade-up" data-aos-delay="900">
+                    <div class="icon"><i class="las la-tree"></i></div>
+                    <h3 class="heading-3">Our Commitment to Sustainability</h3>
+                    <p>BurgerBees is more than just a burger joint; we're stewards of the environment. We're committed to sustainable practices, from sourcing ingredients responsibly to reducing waste through composting and recycling. We believe that every delicious bite should leave a positive impact on our planet.</p>
+                </div>
+                <div class="service" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon"><i class="las la-pencil-ruler"></i></div>
+                    <h3 class="heading-3">Community Involvement</h3>
+                    <p>BurgerBees is proud to be an active member of the community. We regularly participate in local events, sponsor youth sports teams, and support charitable organizations. Our aim is to give back to the community that has embraced us.</p>
+                </div>
+                <div class="service" data-aos="fade-up" data-aos-delay="600">
+                    <div class="icon"><i class="lab la-gg"></i></div>
+                    <h3 class="heading-3">Our Team</h3>
+                    <p>Our dedicated team of chefs, servers, and staff are the backbone of BurgerBees. They share a passion for food and a commitment to delivering exceptional service. Together, we strive to make every visit to BurgerBees a memorable one.</p>
+                </div>
+                <div class="service" data-aos="fade-up" data-aos-delay="900">
+                    <div class="icon"><i class="las la-marker"></i></div>
+                    <h3 class="heading-3">Customer Satisfaction</h3>
+    <p>At BurgerBees, customer satisfaction is our top priority. We strive to create an exceptional dining experience by ensuring prompt service, maintaining high cleanliness standards, and listening attentively to our customers' feedback. Your enjoyment and satisfaction with every visit are what drive us to continually improve and innovate.</p>
+</div>
                 </div>
             </div>
         </div>
-    </section><!-- about -->
-  <!-- Skills-->
-  <section id="skills" class="bg-light">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-md-8 mx-auto text-center">
-                <h6 class="text-primary">My Skills</h6>
-                <h1>Continuous Learner and Skilled Problem Solver</h1>
-                <p>I am passionate about learning and constantly enhancing my skills. This drive stems from my natural curiosity and eagerness to explore new concepts and technologies. I thrive in environments that challenge me to think critically and creatively, pushing me to innovate and find effective solutions. By embracing continuous learning,it cultivate me a mindset that values growth and adaptability. This passion not only fuels my professional ambitions but also reflects my proactive approach to personal development and my commitment to achieving excellence in everything I pursue.</p>
+    </section>
+    <!-- //Services -->
 
-            </div>
+ <!-- Menu -->
+ <section id="menu">
+    <div class="container">
+        <div class="section-intro" data-aos="fade-up">
+            <h1 class="heading-2">Our menu</h1>
         </div>
-        <div class="row g-4">
+      
+        <style>
+            .menu-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                padding: 5px;
+            }
+
+            .menu-item {
+                flex: 0 1 calc(32% - 5px); 
+                background-color: #fff;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                overflow: hidden;
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+
            
-                <div class="pricing card-effect text-center">
-                    <h6>Skills</h6>
-                   
-                    <hr>
-                    <ul class="list-unstyled mb-4">
-                        <li><i class='bx bxs-check-circle'></i>
-                            Active Listening</li>
-                        <li><i class='bx bxs-check-circle'></i>
-                            Problem Solving</li>
-                        <li><i class='bx bxs-check-circle'></i>
-                            Leadership</li>
-                        <li><i class='bx bxs-check-circle'></i>
-                            Creativity and innovation</li>
-                        <li><i class='bx bxs-check-circle'></i>Python</li>
-                        <li><i class='bx bxs-check-circle'></i>Communication</li>
-                        <li><i class='bx bxs-check-circle'></i>Microsoft Excel</li>
-                        <li><i class='bx bxs-check-circle'></i>Java</li>
-                        <li><i class='bx bxs-check-circle'></i>Leadership</li>
-                        <li><i class='bx bxs-check-circle'></i>Critical Thinking</li>
 
+            .item-image img {
+    width: 100%;
+    height: auto;
+   
+    border-radius: 5px 5px 0 0;
+}
 
-                    </ul>
+            .item-details {
+                padding: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                color: red;
+                margin-bottom: 10px;
+            }
+
+            p {
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            .price {
+                font-weight: bold;
+                color: #fca311;
+                margin-bottom: 10px;
+            }
+
+            .add-to-cart {
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+                background-color: #de7728;
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                
+            }
+
+            .add-to-cart:hover {
+                background-color: #6a0000;
+            }
+        </style>
+
+        <div class="menu-container">
+            <section class="menu-item" data-id="1">
+                <div class="item-image">
+                    <img src="burger1.jpeg" alt="Veg Bee Burger">
                 </div>
-          
+                <div class="item-details">
+                    <h2>Veg Bee Burger</h2>
+                    <p>Bees signature burger with Veg patty, onion, lettuce and two sauces.</p>
+                    <p class="price">Rs 150</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+
+            <section class="menu-item" data-id="2">
+                <div class="item-image">
+                    <img src="burger2.jpeg" alt="Veg Zinger Burger">
+                </div>
+                <div class="item-details">
+                    <h2>Veg Zinger Burger</h2>
+                    <p>Bees signature Veg burger with crispy patties, veggies and a tangy sauce.</p>
+                    <p class="price">Rs 165</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+
+            <section class="menu-item" data-id="3">
+                <div class="item-image">
+                    <img src="burger3.jpg" alt="Veg Zinger Burger With Cheese">
+                </div>
+                <div class="item-details">
+                    <h2>Veg Cheese Zinger Burger</h2>
+                    <p>Bees signature Veg burger with crispy patties, veggies, a tangy sauce and a cheese slice.</p>
+                    <p class="price">Rs 175</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+
+            <section class="menu-item" data-id="5">
+                <div class="item-image">
+                    <img src="burger5.jpeg" alt="Double Veg Krisper Burger">
+                </div>
+                <div class="item-details">
+                    <h2>Double Veg Krisper Burger</h2>
+                    <p>Bees Signature Veg burger with double crispy patties.</p>
+                    <p class="price">Rs 200</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+
+            <section class="menu-item" data-id="7">
+                <div class="item-image">
+                    <img src="burger7.jpeg" alt="Chicken Bee Burger">
+                </div>
+                <div class="item-details">
+                    <h2>Chicken Bee Burger</h2>
+                    <p>Bees signature burger with a crunchy chicken patty, veggies and a punchy sauce.</p>
+                    <p class="price">Rs 170</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+
+            <section class="menu-item" data-id="8">
+                <div class="item-image">
+                    <img src="burger8.jpeg" alt="Chicken Zinger Burger">
+                </div>
+                <div class="item-details">
+                    <h2>Chicken Zinger Burger</h2>
+                    <p>Bees Signature burger made with a crunchy chicken patty, veggies and a delicious mayo sauce.</p>
+                    <p class="price">Rs 180</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+
+            <section class="menu-item" data-id="9">
+                <div class="item-image">
+                    <img src="burger9.jpeg" alt="Chicken Zinger Burger With Cheese">
+                </div>
+                <div class="item-details">
+                    <h2>Chicken Zinger Burger With Cheese</h2>
+                    <p>Bees signature burger made with a crunchy chicken patty, veggies and a cheese slice.</p>
+                    <p class="price">Rs 190</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+
+            <section class="menu-item" data-id="10">
+                <div class="item-image">
+                    <img src="burger10.jpeg" alt="Chicken Krisper Burger">
+                </div>
+                <div class="item-details">
+                    <h2>Chicken Krisper Burger</h2>
+                    <p>Signature chicken burger with crispy patties and cheese slice.</p>
+                    <p class="price">Rs 205</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
+            <section class="menu-item" data-id="11">
+                <div class="item-image">
+                    <img src="burger11.jpeg" alt="Double Chicken Krisper Burger">
+                </div>
+                <div class="item-details">
+                    <h2>Double Chicken Krisper Burger</h2>
+                    <p>Signature chicken burger with double crispy patties and cheese slice.</p>
+                    <p class="price">Rs 220</p>
+                    <a href="#" class="add-to-cart">Order now!</a>
+                </div>
+            </section>
         </div>
     </div>
-</section><!-- skills -->
+</section>
+<!-- //Menu -->
 
-    <!-- PROJECTS -->
-    <section id="project">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">Projects</h6>
-                    <h1>My recent projects</h1>
-
-            </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="blog-post card-effect">
-                        <img src="img/free.png" alt="">
-                        <h5 class="mt-4"><a href="#">Freelance Fleet</a></h5>
-                        <p>For my final year Undergraduation project, I created 'Freelance Fleet', an innovative platform aimed at enhancing trust within the freelance industry. This was achieved by implementing certificate verification for freelancers during registration and ensuring email verification for both clients and freelancers, thereby enhancing authenticity and mitigating fraud risks. Developed using PHP, MySQL, JavaScript, and Bootstrap, this project exemplifies my commitment to innovation and my capability to deliver comprehensive solutions that address industry challenges effectively. </p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-post card-effect">
-                        <img src="img/snake.png" alt="Snake and Ladder Game">
-                        <h5 class="mt-4"><a href="#">Snake and Ladder Game</a></h5>
-                        <p>Developed an interactive Snake and Ladder game using Python's Object-Oriented Programming (OOP) paradigm. Implemented classes for game board setup, player movements, and game rules. This project showcases my proficiency in Python programming, OOP concepts, and my ability to create engaging and interactive applications.</p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="blog-post card-effect">
-                        <img src="img/burger.png" alt="Burger Bees Project">
-                        <h5 class="mt-4"><a href="#">Burger Bees</a></h5>
-                        <p>Developed "Burger Bees", an interactive web application using HTML, CSS, and JavaScript. Implemented a dynamic add to cart functionality allowing users to select burger items and calculate total costs in real-time. Utilized JavaScript for handling user interactions, updating cart items, and performing calculations based on selected burger options and quantities. This project demonstrates my proficiency in front-end web development and my ability to create engaging and functional user interfaces.</p>
-                    </div>
-                </div>
-                
-            </div>
-
-        </div>
-    </section><!-- PROJECTS -->
-
-  
-<!-- RESUME-->
-<section id="resume">
+ 
+<!-- Customer Testimonials -->
+<section id="ct">
     <div class="container">
-        <div class="row mb-5">
-            <div class="col-md-8 mx-auto text-center">
-                <h6 class="text-primary">Resume</h6>
-                <h1>My Resume</h1>
-                <p>Download my resume here. <a class="btn btn-primary" href="myresume.pdf" download>Resume</a>.</p>
+        <div class="section-intro" data-aos="fade-up">
+            <h1 style="font-size: 36px;">Customer Testimonials</h1>
+        </div>
+        <div class="grid three-col-grid">
+            <div class="cus" data-aos="flip-left" data-aos-delay="300">
+                <img src="./images/cus1.jpg" alt="Discover the Secret of Burger Bees">
+                <h3><a href="#">Friends' Favorite: Our Burger Bees Experience</a></h3>
+                <p>"Burger Bees is our go-to spot for delicious burgers! The honey-infused flavors are simply unbeatable. It's our favorite hangout!"</p>
+            </div>
+            <div class="cus" data-aos="flip-left" data-aos-delay="600">
+                <img src="./images/cus2.jpg" alt="Burger Bees: A Taste Adventure">
+                <h3><a href="#">Nishant's Burger Bees Experience: A Flavorful Journey</a></h3>
+                <p>"I've tried burgers from all over, but nothing comes close to Burger Bees. The blend of flavors and quality ingredients make every visit a treat. Highly recommend!"</p>
+            </div>
+            <div class="cus" data-aos="flip-left" data-aos-delay="900">
+                <img src="./images/cus3.jpg" alt="Behind the Scenes at Burger Bees">
+                <h3><a href="#">Jessica's Delight: A Taste of Burger Bees</a></h3>
+                <p>"Burger Bees has won my heart with their incredible burgers! Each bite is a journey of flavors. It's my go-to place for a satisfying meal!"</p>
             </div>
         </div>
     </div>
-</section><!-- RESUME-->
+</section>
+<!-- //Customer Testimonials -->
 
 
 
-  
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">CONTACT</h6>
-                    <h1>Contact me</h1>
-                    <p>you can contact me through my email ID-prathibadhanush1911@gmail.com</p>
-                    <p>you can also contact me through linkedIn-www.linkedin.com/in/prathibadhanush</p>
-                    <p>My Phone number-9677968150</p>
-
-                    
-                </div>
-            </div>
-        </div>
-    </section><!-- CONTACT -->
-
+    <!-- Footer -->
     <footer>
-        <div class="footer-top">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-4">
-                    </div>
-             
-        <div class="footer-bottom py-3">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="mb-0">© 2024 copyright all right reserved.
-                    
-
-                </div>
+        <div class="container">
+            <p>All rights reserved by Burger Bees@2024 </a></p>
             </div>
         </div>
     </footer>
-
-
-
-    <script src="js/bootstrap.bundle.min.js"></script>
+    
+   
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+ 
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
 </html>
